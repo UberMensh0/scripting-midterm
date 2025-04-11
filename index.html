@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scipting Midterm</title>
+
+  <!-- font link -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+  <!-- JS Logic -->
+  <script src="JS/script.js" defer></script>
+
+  <!-- CSS Style -->
+  <link rel="stylesheet" href="CSS/styles.css" />
+
+</head>
+<body>
+  <div id="form-wrapper">
+    <div class="form-wrapper">
+      <form id="groupForm">
+        <h1>Group Form</h1>
+  
+        <!-- First and last names -->
+        <div class="form-group">
+          <div>
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" placeholder="First name" />
+
+            <!-- First Name error -->
+            <span class="error-message" id="firstNameError"></span>
+          </div>
+          <div>
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" placeholder="Last name" />
+
+            <!-- Last Name error -->
+            <span class="error-message" id="lastNameError"></span>
+          </div>
+        </div>
+  
+        <!-- Email -->
+        <div class="email">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="you@company.com" />
+
+          <!-- Email error -->
+          <span class="error-message" id="emailError"></span>
+        </div>
+  
+        <!-- Password -->
+        <div class="password">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Password" />
+
+          <!-- Password error -->
+          <span class="error-message" id="passwordError"></span>
+        </div>
+  
+        <!-- Team Size -->
+        <div class="teamSize">
+          <label for="teamSize">Team size</label>
+          <select id="teamSize">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+  
+ <!-- Technologies -->
+<div class="form-group tech-group">
+  <label class="tech-label">Technologies</label>
+
+  <div id="checkbox-wrapper" class="checkbox-wrapper">
+    <div class="checkbox-one">
+      <label><input type="checkbox"> Html</label>
+      <label><input type="checkbox"> Css</label>
+      <label><input type="checkbox"> Javascript</label>
+    </div>
+    <div class="checkbox-two">
+      <label><input type="checkbox"> ReactJS</label>
+      <label><input type="checkbox"> Figma</label>
+      <label><input type="checkbox"> Github</label>
+    </div>
+  </div>
+
+  <div id="error-wrapper" style="display: none;">
+    <img src="img/error-triangle.png" alt="Error icon" />
+    <span id="tech-error">Choose at least 3 technologies</span>
+  </div>
+</div>
+
+
+
+  
+        <!-- Button -->
+        <button id="button" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  
+  <!-- TODO game part -->
+</body>
+</html>
