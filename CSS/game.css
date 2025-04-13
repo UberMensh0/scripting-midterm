@@ -1,0 +1,151 @@
+/* game layout */
+.game-body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color:rgb(176, 173, 173);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* game screen */
+.game-screen {
+    width: 1055px;
+    min-height: 775px;
+    border-radius: 25px;
+    background-color: #D9D9D9;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative; 
+}
+
+.heading {
+    font-weight: 700;
+    font-size: 40px;
+    color: #070A52;
+    margin-bottom: 20px;
+}
+
+.subheading {
+    font-weight: 700;
+    font-size: 25px;
+    color: #000000;
+    margin-bottom: -10px;
+}
+
+/* feedback message */
+.feedback {
+    font-weight: 700;
+    font-size: 50px;
+    color: #AF2D2D;
+    margin-bottom: 10px;
+}
+
+/* input field styling */
+.input-container input{
+    width: 375px;
+    height: 70px;
+    font-size: 18px;
+    padding: 10px 10px;
+    border-radius: 10px;
+    text-indent: 3%;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+/* for validation message */
+.validation {
+    font-weight: 500;
+    font-size: 25px;
+    color: #FF0000;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.guess-button,
+.restart-button {
+    width: 234px;
+    height: 70px;
+    background-color: #DF2E38;
+    border-radius: 18px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 25px;
+    cursor: pointer;
+    margin-top: -10px;
+    transition: all 0.2s ease;
+}
+
+.guess-button:hover,
+.restart-button:hover {
+    background-color: #b82028; 
+    transform: scale(1.05);   
+    transition: all 0.2s ease; 
+}
+
+
+.score-container {
+    position: absolute;
+    top: 270px;
+    right: 30px; 
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+}
+
+.score-container p {
+    font-weight: 600;
+    font-size: 33px;
+    font-family: 'Inter', sans-serif;
+    color: #000000;
+    margin: 5px 0;
+}
+
+/* optional score line */
+.score {
+    display: none;
+}
+
+/* history section */
+.history-title {
+    font-weight: 600;
+    font-size: 45px;
+    color: #247527;
+    margin-top: 20px;
+}
+
+/* history list container */
+#historyList {
+    list-style-type: disc;
+    list-style-position: outside;
+    padding-left: 40px; 
+    margin: 0
+}
+
+/* each guess */
+#historyList li {
+    display: list-item;
+    font-weight: 600;
+    font-size: 24px;
+    font-family: 'Inter', sans-serif;
+    color: #000;
+    letter-spacing: 0;
+    margin-bottom: 5px;
+
+}
+
+#historyList li span {
+    color: #005DFF;
+}

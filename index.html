@@ -1,106 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Scipting Midterm</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scipting Midterm</title>
 
-  <!-- font link -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- font link -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
+    <!-- JS Logic -->
+    <script src="JS/script.js" defer></script>
+    <script src="JS/game.js" defer></script>
 
-  <!-- JS Logic -->
-  <script src="JS/script.js" defer></script>
+    <!-- CSS Style -->
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <link rel="stylesheet" href="CSS/game.css" />
+  </head>
+  <body>
+    <div id="form-wrapper">
+      <div class="form-wrapper">
+        <form id="groupForm">
+          <h1>Group Form</h1>
 
-  <!-- CSS Style -->
-  <link rel="stylesheet" href="CSS/styles.css" />
+          <!-- First and last names -->
+          <div class="form-group">
+            <div>
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" placeholder="First name" />
 
-</head>
-<body>
-  <div id="form-wrapper">
-    <div class="form-wrapper">
-      <form id="groupForm">
-        <h1>Group Form</h1>
-  
-        <!-- First and last names -->
-        <div class="form-group">
-          <div>
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" placeholder="First name" />
+              <!-- First Name error -->
+              <span class="error-message" id="firstNameError"></span>
+            </div>
+            <div>
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" placeholder="Last name" />
 
-            <!-- First Name error -->
-            <span class="error-message" id="firstNameError"></span>
+              <!-- Last Name error -->
+              <span class="error-message" id="lastNameError"></span>
+            </div>
           </div>
-          <div>
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" placeholder="Last name" />
 
-            <!-- Last Name error -->
-            <span class="error-message" id="lastNameError"></span>
+          <!-- Email -->
+          <div class="email">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="you@company.com" />
+
+            <!-- Email error -->
+            <span class="error-message" id="emailError"></span>
           </div>
-        </div>
-  
-        <!-- Email -->
-        <div class="email">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="you@company.com" />
 
-          <!-- Email error -->
-          <span class="error-message" id="emailError"></span>
-        </div>
-  
-        <!-- Password -->
-        <div class="password">
-          <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Password" />
+          <!-- Password -->
+          <div class="password">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Password" />
 
-          <!-- Password error -->
-          <span class="error-message" id="passwordError"></span>
-        </div>
-  
-        <!-- Team Size -->
-        <div class="teamSize">
-          <label for="teamSize">Team size</label>
-          <select id="teamSize">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-          </select>
-        </div>
-  
- <!-- Technologies -->
-<div class="form-group tech-group">
-  <label class="tech-label">Technologies</label>
+            <!-- Password error -->
+            <span class="error-message" id="passwordError"></span>
+          </div>
 
-  <div id="checkbox-wrapper" class="checkbox-wrapper">
-    <div class="checkbox-one">
-      <label><input type="checkbox"> Html</label>
-      <label><input type="checkbox"> Css</label>
-      <label><input type="checkbox"> Javascript</label>
+          <!-- Team Size -->
+          <div class="teamSize">
+            <label for="teamSize">Team size</label>
+            <select id="teamSize">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+
+          <!-- Technologies -->
+          <div class="form-group tech-group">
+            <label class="tech-label">Technologies</label>
+
+            <div id="checkbox-wrapper" class="checkbox-wrapper">
+              <div class="checkbox-one">
+                <label><input type="checkbox" /> Html</label>
+                <label><input type="checkbox" /> Css</label>
+                <label><input type="checkbox" /> Javascript</label>
+              </div>
+              <div class="checkbox-two">
+                <label><input type="checkbox" /> ReactJS</label>
+                <label><input type="checkbox" /> Figma</label>
+                <label><input type="checkbox" /> Github</label>
+              </div>
+            </div>
+
+            <div id="error-wrapper" style="display: none">
+              <img src="img/error-triangle.png" alt="Error icon" />
+              <span id="tech-error">Choose at least 3 technologies</span>
+            </div>
+          </div>
+
+          <!-- Button -->
+          <button id="button" type="submit">Submit</button>
+        </form>
+      </div>
     </div>
-    <div class="checkbox-two">
-      <label><input type="checkbox"> ReactJS</label>
-      <label><input type="checkbox"> Figma</label>
-      <label><input type="checkbox"> Github</label>
+
+    <!-- game part -->
+    <!--hidden initially, will be shown after form validation-->
+    <div id="game-wrapper" style="display: none">
+      <div class="game-screen">
+        <!--heading and subheading-->
+        <h1 class="heading">Guess the Number!</h1>
+        <p class="subheading">I'm thinking of a number between 1 and 100.</p>
+
+        <!--feedback area-->
+        <p id="message" class="feedback"></p>
+
+        <!--input flied-->
+        <div class="input-container">
+          <input id="guessInput" type="text" placeholder="Enter your guess" />
+        </div>
+
+        <!--displaying score and attemps-->
+        <div class="score-container">
+          <p>Score: <span id="score">10</span></p>
+          <p>Attempts: <span id="attempts">0</span>/ 10</p>
+        </div>
+
+        <p id="validation" class="validation"></p>
+        <!--validation-->
+
+        <!--submit and restart buttons-->
+        <div class="buttons">
+          <button id="guess-btn" class="guess-button">Guess</button>
+          <button id="restart-btn" class="restart-button">Restart</button>
+        </div>
+
+        <!--remaining attempts-->
+        <p class="score">Attempts left: <span id="attemptsLeft">10</span></p>
+
+        <!--guess history-->
+        <p class="history-title">Guess History</p>
+        <ul id="historyList"></ul>
+        <!--previous guesses-->
+      </div>
     </div>
-  </div>
-
-  <div id="error-wrapper" style="display: none;">
-    <img src="img/error-triangle.png" alt="Error icon" />
-    <span id="tech-error">Choose at least 3 technologies</span>
-  </div>
-</div>
-
-
-
-  
-        <!-- Button -->
-        <button id="button" type="submit">Submit</button>
-      </form>
-    </div>
-  </div>
-
-  
-  <!-- TODO game part -->
-</body>
+  </body>
 </html>

@@ -61,8 +61,8 @@ groupForm.addEventListener('submit', e => {
 
 
 
-  // Checkbox validation (must choose at least 3)
-  const checkedBoxes = document.querySelectorAll('input[type="checkbox"]:checked');
+ // Checkbox validation (must choose at least 3)
+const checkedBoxes = document.querySelectorAll('input[type="checkbox"]:checked');
 const errorWrapper = document.getElementById('error-wrapper');
 
 if (checkedBoxes.length < 3) {
@@ -72,4 +72,17 @@ if (checkedBoxes.length < 3) {
   errorWrapper.style.display = 'none';
 }
 
+
+if(!hasError)
+  showGameSection();
 });
+
+
+function showGameSection() {
+  const formSection = document.getElementById("form-wrapper");
+  const gameSection = document.getElementById("game-wrapper");
+
+  formSection.style.display = "none";
+  gameSection.style.display = "block";
+  document.body.className = "game-body";
+}
